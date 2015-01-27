@@ -1,1 +1,4 @@
-<p>This is the pokemon view.</p>
+<h1>{{pokeData.name}}</h1>
+<div ng-repeat="(key, obj) in pokeData">
+    <strong>{{key}}</strong>: {{obj}}
+</div>

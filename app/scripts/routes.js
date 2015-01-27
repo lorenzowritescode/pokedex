@@ -72,7 +72,7 @@ angular.module('firetodoApp')
         controller: 'ChatCtrl'
       })
       
-      .when('/poke', {
+      .when('/poke/:pokeNumber', {
         templateUrl: 'views/pokemon.html',
         controller: 'PokeCtrl'
       })

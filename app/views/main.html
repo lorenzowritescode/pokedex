@@ -1,6 +1,6 @@
 <div class="row marketing">
     <h1>Fetched {{pokemons.length}} pokemons!</h1>
     <div ng-repeat="poke in pokemons">
-        <p> Name: {{poke.name}}</p>
+        <p ng-click="changeView(poke.resource_uri)"> Name: {{poke.name}} </p>
     </div>
 </div>
