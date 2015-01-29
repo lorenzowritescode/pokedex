@@ -1,6 +1,14 @@
 <div class="row marketing">
     <h1>Fetched {{pokemons.length}} pokemons!</h1>
-    <div ng-repeat="poke in pokemons">
-        <p ng-click="changeView(poke.resource_uri)"> Name: {{poke.name}} </p>
+    <input type="text" ng-model="filterBy" ng-init="filterLimit = 20">
+    <hr>
+    <div ng-repeat="poke in pokemons | filter: filterBy | limitTo:filterLimit">
+        <div class="pokecard" ng-click="changeView(poke.resource_uri)"> 
+            <div>{{poke.name}}</div>
+        </div>
+    </div>
+    <div class="btn-container">
+        <a class="btn btn-info" ng-click="filterLimit = filterLimit * 2">Show more <span class="glyphicon glyphicon-plus"></span></a>
+        <a class="btn btn-warning" ng-click="filterLimit = filterLimit / 2">Show less <span class="glyphicon glyphicon-minus"></span></a>
     </div>
 </div>

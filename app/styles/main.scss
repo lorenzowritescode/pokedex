@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "align.scss";
 // endbower
 
 .browsehappy {
@@ -89,4 +90,24 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.pokecard {
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.pokecard > * {
+    @include vertical-align;
+}
+
+.btn-container {
+    float: right;
 }

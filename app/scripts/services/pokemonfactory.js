@@ -9,16 +9,25 @@
  */
 angular.module('firetodoApp')
   .factory('PokemonFactory', [ '$http', function ($http) {
-    var apiUrl = 'http://pokeapi.co/api/v1';
-    var pokeFactory = {};
+      var baseUrl = 'http://pokeapi.co',
+          apiUrl = baseUrl + '/api/v1',
+          pokeFactory = {};
     
     pokeFactory.getAll = function () {
-        return $http.get(apiUrl + '/pokedex/1');
+        return connect(apiUrl + '/pokedex/1');
     };
     
     pokeFactory.getPokemon = function (pokeNumber) {
-        return $http.get(apiUrl + '/pokemon/' + pokeNumber);
+        return connect(apiUrl + '/pokemon/' + pokeNumber);
     };
+      
+    pokeFactory.getURI = function (resourceURI) {
+        return connect(baseUrl + resourceURI);   
+    }
+    
+    function connect (path) {
+        return $http.get(path);
+    }
     
     return pokeFactory;
   }]);
