@@ -12,13 +12,15 @@ angular.module('firetodoApp')
       PokemonFactory.getAll()
         .success(function (data) {
             $scope.pokemons = data.pokemon;
+            $scope.pokemons.forEach( function (val) {
+                val.id = extractID(val.resource_uri);
+            });
         })
         .error(function (err) {
           alert(err.message);
         });
       
       $scope.changeView = function (resourceURI) {
-          console.log(extractID(resourceURI));
           $location.path('poke/' + extractID(resourceURI));
       }
       

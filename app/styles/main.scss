@@ -93,8 +93,6 @@ body {
 }
 
 .pokecard {
-    width: 100px;
-    height: 50px;
     margin: 15px;
     float: left;
     border-color: black;
@@ -110,4 +108,8 @@ body {
 
 .btn-container {
     float: right;
+}
+
+.img-container { 
+    height: 50%;
 }
