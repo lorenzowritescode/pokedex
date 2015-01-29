@@ -3,7 +3,7 @@
 describe('Service: PokemonFactory', function () {
 
   // load the service's module
-  beforeEach(module('firetodoApp'));
+  beforeEach(module('pokedexApp'));
 
   // instantiate service
   var PokemonFactory;

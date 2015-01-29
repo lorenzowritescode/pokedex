@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @ngdoc overview
- * @name firetodoApp:routes
+ * @name pokedexApp:routes
  * @description
  * # routes.js
  *
@@ -27,7 +27,7 @@
  *   }
  *
  */
-angular.module('firetodoApp')
+angular.module('pokedexApp')
 
 /**
  * Adds a special `whenAuthenticated` method onto $routeProvider. This special method,

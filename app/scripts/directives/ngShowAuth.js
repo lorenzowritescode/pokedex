@@ -1,12 +1,12 @@
 /**
  * @ngdoc function
- * @name firetodoApp.directive:ngShowAuth
+ * @name pokedexApp.directive:ngShowAuth
  * @description
  * # ngShowAuthDirective
  * A directive that shows elements only when user is logged in. It also waits for simpleLogin
  * to be initialized so there is no initial flashing of incorrect state.
  */
-angular.module('firetodoApp')
+angular.module('pokedexApp')
   .directive('ngShowAuth', ['simpleLogin', '$timeout', function (simpleLogin, $timeout) {
     'use strict';
     var isLoggedIn;

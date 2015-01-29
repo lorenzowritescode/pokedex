@@ -1,12 +1,12 @@
 'use strict';
 /**
  * @ngdoc function
- * @name firetodoApp.controller:ChatCtrl
+ * @name pokedexApp.controller:ChatCtrl
  * @description
  * # ChatCtrl
  * A demo of using AngularFire to manage a synchronized list.
  */
-angular.module('firetodoApp')
+angular.module('pokedexApp')
   .controller('ChatCtrl', function ($scope, fbutil, $timeout) {
     // synchronize a read-only, synchronized array of messages, limit to most recent 10
     $scope.messages = fbutil.syncArray('messages', {limitToLast: 10});

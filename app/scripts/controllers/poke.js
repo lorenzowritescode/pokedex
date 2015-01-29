@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name firetodoApp.controller:PokectrlCtrl
+ * @name pokedexApp.controller:PokectrlCtrl
  * @description
  * # PokectrlCtrl
- * Controller of the firetodoApp
+ * Controller of the pokedexApp
  */
-angular.module('firetodoApp')
+angular.module('pokedexApp')
   .controller('PokeCtrl', ['$scope', 'PokemonFactory', '$routeParams', function ($scope, PokeFactory, $routeParams) {
       PokeFactory.getPokemon($routeParams.pokeNumber)
         .success(function (data) {

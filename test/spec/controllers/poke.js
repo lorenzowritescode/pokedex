@@ -3,7 +3,7 @@
 describe('Controller: PokectrlCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('firetodoApp'));
+  beforeEach(module('pokedexApp'));
 
   var PokectrlCtrl,
     scope;

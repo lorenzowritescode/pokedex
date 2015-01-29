@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc overview
- * @name firetodoApp
+ * @name pokedexApp
  * @description
- * # firetodoApp
+ * # pokedexApp
  *
  * Main module of the application.
  */
-angular.module('firetodoApp', [
+angular.module('pokedexApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

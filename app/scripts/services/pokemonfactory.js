@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name firetodoApp.PokemonFactory
+ * @name pokedexApp.PokemonFactory
  * @description
  * # PokemonFactory
- * Factory in the firetodoApp.
+ * Factory in the pokedexApp.
  */
-angular.module('firetodoApp')
+angular.module('pokedexApp')
   .factory('PokemonFactory', [ '$http', function ($http) {
       var baseUrl = 'http://pokeapi.co',
           apiUrl = baseUrl + '/api/v1',
@@ -23,7 +23,7 @@ angular.module('firetodoApp')
       
     pokeFactory.getURI = function (resourceURI) {
         return connect(baseUrl + resourceURI);   
-    }
+    };
     
     function connect (path) {
         return $http.get(path);

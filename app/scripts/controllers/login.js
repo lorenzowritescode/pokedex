@@ -1,12 +1,12 @@
 'use strict';
 /**
  * @ngdoc function
- * @name firetodoApp.controller:LoginCtrl
+ * @name pokedexApp.controller:LoginCtrl
  * @description
  * # LoginCtrl
  * Manages authentication to any active providers.
  */
-angular.module('firetodoApp')
+angular.module('pokedexApp')
   .controller('LoginCtrl', function ($scope, simpleLogin, $location) {
     $scope.oauthLogin = function(provider) {
       $scope.err = null;
