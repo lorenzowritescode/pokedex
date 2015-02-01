@@ -11,8 +11,8 @@ angular.module('pokedexApp')
     .service('utility', ['$location', function ($location) {
         // Lord forgive me for this function
         this.extractID = function (resourceURI) {
-            var removeTrailingSlash = resourceURI.substring(0, resourceURI.length - 1);
-            var breakpoint = removeTrailingSlash.lastIndexOf('/');
+            var removeTrailingSlash = resourceURI.substring(0, resourceURI.length - 1),
+                breakpoint = removeTrailingSlash.lastIndexOf('/');
             return removeTrailingSlash.substring(breakpoint + 1);
         }
         

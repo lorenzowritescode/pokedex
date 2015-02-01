@@ -17,5 +17,6 @@ angular.module('pokedexApp', [
     'ngTouch',
     'firebase',
     'firebase.utils',
-    'simpleLogin'
+    'simpleLogin',
+    'ngTable'
   ]);

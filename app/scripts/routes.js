@@ -77,6 +77,11 @@ angular.module('pokedexApp')
         controller: 'PokeCtrl'
       })
     
+      .when('/type/:typeNumber', {
+      templateUrl: 'views/type.html',
+      controller: 'TypeCtrl'
+      })
+    
       .whenAuthenticated('/account', {
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl'

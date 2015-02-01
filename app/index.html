@@ -9,10 +9,12 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/poke.css">
     <!-- endbuild -->
   </head>
   <body ng-app="pokedexApp">
@@ -32,7 +34,7 @@
             <a ng-show-auth="" href="#/account">account</a>
           </li>
           </ul>
-        <h3 class="text-muted">firetodo</h3>
+        <h3 class="text-muted">pokedex</h3>
       </div>
 
       <div ng-view=""></div>
@@ -87,6 +89,7 @@
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/Chart.js/Chart.min.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/ng-table/dist/ng-table.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -105,6 +108,8 @@
         <script src="scripts/routes.js"></script>
         <script src="scripts/services/pokemonfactory.js"></script>
         <script src="scripts/controllers/poke.js"></script>
+        <script src="scripts/services/utility.js"></script>
+        <script src="scripts/controllers/type.js"></script>
         <!-- endbuild -->
 </body>
 </html>

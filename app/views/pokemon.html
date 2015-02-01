@@ -1,4 +1,84 @@
-<h1>{{pokeData.name}}</h1>
-<div ng-repeat="(key, obj) in pokeData">
-    <strong>{{key}}</strong>: {{obj}}
+<div class="row pokesprite">
+    <img class="centered" ng-src="http://pokeapi.co/media/img/{{pokeData.national_id}}.png">
 </div>
+<br />
+<div class="pokename">{{pokeData.name}}</div>
+<br />
+<div id="pokestats" class="row pokestats xcenter">
+    <div class="statbox attack">{{pokeData.attack}}</div>
+    <div class="statbox defense">{{pokeData.defense}}</div>
+    <div class="statbox hp">{{pokeData.hp}}</div>
+</div>
+<div class="evolutions" ng-show="pokeData !== 'undefined' && pokeData.evolutions.length != 0">
+<!--<h3>Evolutions:</h3>-->
+    <h3>{{pokeData.evolutions.length}} evolutions:</h3>
+    <table class="table table-bordered col-md-12" ng-show="pokeData.evolutions.length != 0">
+        <thead>
+            <td>Level</td>
+            <td>Evolution</td>
+            <td>Go to page:</td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="evolution in pokeData.evolutions">
+                <td>{{evolution.level}}</td>
+                <td>{{evolution.to}}</td>
+                <td>
+                    <button class="btn btn-small btn-info btn-block" ng-click="navigate('{{evolution.resource_uri}}')">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="moves" ng-show="pokeData !== 'undefined' && pokeData.moves.length != 0" ng-init="moveLimit = 5">
+<!--<h3>Moves:</h3>-->
+    <h3>{{pokeData.moves.length}} moves</h3>
+    <div class="moveFilter">
+        <input class="form-control" type="text" ng-model="moveFilter" placeholder="Filter Moves">
+    </div>
+    <table class="table table-bordered col-md-12">
+        <thead>
+            <td>Learn Type</td>
+            <td>Level</td>
+            <td>Name</td>
+            <td>Go to move</td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="move in pokeData.moves | filter: moveFilter | limitTo: moveLimit">
+                <td>{{move.learn_type}}</td>
+                <td>
+                    <div ng-show="'{{move.learn_type}}' == 'level up'">
+                        {{move.level}}
+                    </div>
+                    <div ng-show="'{{move.learn_type}}' != 'level up'">
+                        <span class="glyphicon glyphicon-flash"></span>
+                    </div>
+                </td>
+                <td>{{move.name}}</td>
+                <td>
+                    <button class="btn btn-small btn-info btn-block" ng-click="navigate('{{move.resource_uri}}')">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="4">
+                {{pokeData.moves.length - moveLimit}} more moves.
+                <button class="btn btn-success btn-sm float-right ycentre" ng-click="moveLimit = moveLimit * 2">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Show More
+                </button>
+            </td>
+        </tfoot>
+    </table>
+</div>
+
+<!--<div class="row details">
+    <div ng-repeat="(key, obj) in pokeData">
+    <strong>{{key}}</strong>: {{obj}}
+    </div>
+</div>-->
