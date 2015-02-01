@@ -1,0 +1,29 @@
+.center {
+    @extend .ycenter;
+    @extend .xcenter;
+}
+
+.ycenter {
+    @extend .block;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.xcenter {
+    @extend .block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block {
+    display: block;
+    float: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.display-table {
+    display: table;
+}
