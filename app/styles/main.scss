@@ -94,17 +94,25 @@ body {
 .pokecard {
     margin: 15px;
     float: left;
-    border-color: black;
-    border-style: solid;
-    border-width: thin;
     text-align: center;
+    text-decoration-color: white;
     font-family: sans-serif;
+    /* Rectangle 9: */
+    background: #E9AFB6;
+    border: 2px solid #D0021B;
+    border-radius: 8px;
 }
 
 .btn-container {
     float: right;
+    margin: 20px;
 }
 
 .img-container { 
     height: 50%;
+}
+.pokecardname {
+    color: white;
+    font-size: 18px;
+    font-family: AvenirNext-UltraLight;
 }
