@@ -8,26 +8,45 @@
  * Factory in the pokedexApp.
  */
 angular.module('pokedexApp')
-  .factory('PokemonFactory', [ '$http', function ($http) {
-      var baseUrl = 'http://pokeapi.co',
-          apiUrl = baseUrl + '/api/v1',
-          pokeFactory = {};
-    
+.factory('PokemonFactory', 
+         ['$http', 
+          '$cacheFactory',
+          PokeFactory]);
+
+function PokeFactory ($http, $cacheFactory) {
+    var baseUrl = 'http://pokeapi.co',
+        apiUrl = baseUrl + '/api/v1',
+        pokedex = $cacheFactory('pokedex'),
+        pokemon = $cacheFactory('pokemon'),
+        moves = $cacheFactory('moves'),
+        pokeFactory = {};
+
     pokeFactory.getAll = function () {
-        return connect(apiUrl + '/pokedex/1');
+        return tryCache(pokedex,
+                        'all',
+                        apiUrl + '/pokedex/1')
     };
-    
+
     pokeFactory.getPokemon = function (pokeNumber) {
-        return connect(apiUrl + '/pokemon/' + pokeNumber);
-    };
-      
-    pokeFactory.getURI = function (resourceURI) {
-        return connect(baseUrl + resourceURI);   
+        return tryCache(pokemon, 
+                        pokeNumber, 
+                        apiUrl + '/pokemon/' + pokeNumber);
     };
     
+    function tryCache (cache, key, path) {
+        var result = cache.get(key);
+         
+        if (!result) {
+            result = connect(path);
+            cache.put(key, result);
+        }
+        
+        return result;
+    }
+
     function connect (path) {
         return $http.get(path);
     }
-    
+
     return pokeFactory;
-  }]);
+};
