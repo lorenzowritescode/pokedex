@@ -1,4 +1,5 @@
-A little web-app to visualise the data made available from the [PokeAPI](pokeapi.co)
+# Check out the [live version](http://perpetualjourney.github.io/pokedex)!
+A little web-app to visualise the data made available from the [PokeAPI](http://pokeapi.co)
 
 ## Running a local web-server
 ```
