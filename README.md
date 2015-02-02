@@ -2,7 +2,7 @@ A little web-app to visualise the data made available from the [PokeAPI](pokeapi
 
 ## Running a local web-server
 ```
-git subtree push --prefix dist origin gh-pages
+grunt serve
 ```
 ## Preparing the build
 ```
